@@ -1,3 +1,9 @@
+import {HappyThoughtInput} from "./components/happyThoughtInput"
+import { HappyThoughtItem } from "./components/HappyThoughtItem"
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>
+  return <div className="app-container">
+    <HappyThoughtInput/>
+    <HappyThoughtItem />
+    </div>
 }

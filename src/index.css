@@ -1,8 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
+
 :root {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Roboto Flex", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +13,101 @@
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.app-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+button {
+  background-color: #ffadad;
+  border-radius: 40px;
+  border: none;
+  font-size: 25px;
+  width: 373px;
+  height: 76px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #f59090;
+}
+
+label {
+  font-size: 20px;
+}
+
+.happy-thought.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.happy-thought.container form {
+  background-color: #f2f0f0;
+}
+
+.happy-thought.container form,
+.happy-thought-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 2px solid #000;
+  box-shadow: 12px 12px 2px 2px #000;
+  width: 760px;
+  height: 300px;
+}
+
+.happy-thought.container form label,
+.happy-thought.container form button {
+  margin-left: 28px;
+}
+
+.happy-thought-input {
+  align-self: center;
+  border: 2px solid #c8c8c8;
+  height: 100px;
+  width: 700px;
+}
+
+.happy-thought-item span {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.time-submitted {
+  color: #eaeaea;
+}
+
+.likes {
+  color: #989898;
+}
+
+.btn-like {
+  background-color: #eaeaea;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  margin: 0 20px;
+}
+
+.btn-like:hover {
+  background-color: #c3c3c3;
+}
+
+.btn-like.active {
+  background-color: #ffadad;
 }

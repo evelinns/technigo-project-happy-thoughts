@@ -116,6 +116,10 @@ label {
   margin-right: 20px;
 }
 
+.btn-like.active {
+  background-color: #f59090;
+}
+
 .btn-like:hover {
   background-color: #c3c3c3;
 }

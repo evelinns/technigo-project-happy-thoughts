@@ -6,7 +6,6 @@ export const thoughtsApi = "https://happy-thoughts-api-4ful.onrender.com/thought
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
-  // const thoughtAPI = "https://happy-thoughts-api-4ful.onrender.com/thoughts";
   
   const fetchThoughts = () => {
       fetch(thoughtsApi)
@@ -15,7 +14,6 @@ export const App = () => {
       })
       .then(data => {
         setThoughts(data)
-        console.log(thoughts)
       })
   }
 
@@ -26,6 +24,6 @@ export const App = () => {
 
   return <div className="app-container">
     <HappyThoughtInput onSend={fetchThoughts} />
-    <HappyThoughtItem thoughts={thoughts} />
+    <HappyThoughtItem thoughts={thoughts} onLike={fetchThoughts} />
     </div>
 }

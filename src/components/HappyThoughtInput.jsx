@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { thoughtsApi } from "../App"
 
 export const HappyThoughtInput = ({ onSend }) => {
-  // const thoughtApi = "https://happy-thoughts-api-4ful.onrender.com/thoughts";
   const [newHappyThought, setNewHappyThought] = useState("");
 
   const handleSubmit = (event) => {

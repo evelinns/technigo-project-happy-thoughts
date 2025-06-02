@@ -1,23 +1,28 @@
-// import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-export const HappyThoughtItem = ({ thoughts }) => {
-  // const [thoughts, setThoughts] = useState([]);
-  
-  // const thoughtAPI = "https://happy-thoughts-api-4ful.onrender.com/thoughts";
-  // const fetchThoughts = () => {
-  //     fetch(thoughtAPI)
-  //     .then((res) => {
-  //       return res.json();
-  //     })
-  //     .then(data => {
-  //       setThoughts(data)
-  //       console.log(thoughts)
-  //     })
-  // }
+export const HappyThoughtItem = ({ thoughts, onLike }) => {
+  const [likedId, setLikedId] = useState(null);
+  const [likedThought, setLikedThought] = useState([]);
 
-  // useEffect(() => {
-  //   fetchThoughts();  
-  // }, [])
+  const handleLike = (id) => {
+    if (likedThought.includes(id)) return;
+    if (likedId === id) return;
+
+    setLikedId(id);
+
+    fetch(`https://happy-thoughts-api-4ful.onrender.com/thoughts/${id}/like`, {
+      method: "POST"
+    })
+    .then((res) => res.json())
+    .then(() => {
+      setLikedThought((prev) => [...prev, id])
+      onLike();
+    })
+    .catch((err) => console.error("Error liking thought:", err))
+    .finally(() => {
+      setLikedId(null);
+    });
+  }
 
   const getTimeAgo = (timestamp) => {
     const now = new Date();
@@ -40,12 +45,19 @@ export const HappyThoughtItem = ({ thoughts }) => {
 
   return <div>
     {thoughts.map((thought) => {
+      const isLiked = likedThought.includes(thought._id);
+
       return (
           <div key={thought._id} className="happy-thought-item">
             <p>{thought.message}</p>
             <span>
               <span>
-                <button className="btn-like">❤️</button>
+                <button
+                  className={`btn-like ${isLiked ? "active" : ""}`}
+                  onClick={() => handleLike(thought._id)} 
+                  disabled={isLiked}
+                >❤️
+                </button>
                 <p className="likes">x {thought.hearts}</p>
               </span>
               <p className="time-submitted">{getTimeAgo(thought.createdAt)}</p>

@@ -1,18 +1,20 @@
 import { useState } from 'react';
+import { thoughtsApi } from "../App"
 
-export const HappyThoughtInput = () => {
-  const thoughtApi = "https://happy-thoughts-api-4ful.onrender.com/thoughts";
+export const HappyThoughtInput = ({ onSend }) => {
+  // const thoughtApi = "https://happy-thoughts-api-4ful.onrender.com/thoughts";
   const [newHappyThought, setNewHappyThought] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch(thoughtApi, {
+    fetch(thoughtsApi, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({message: newHappyThought})
     }).then((response) => {
       console.log("response: ", response)
+      onSend();
     }).catch((error) => {
       console.log("error: ", error)
     })

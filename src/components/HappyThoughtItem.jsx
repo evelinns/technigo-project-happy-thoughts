@@ -1,19 +1,23 @@
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 
-export const HappyThoughtItem = () => {
-  const thoughtAPI = "https://happy-thoughts-api-4ful.onrender.com/thoughts";
-  const [thoughts, setThoughts] = useState([]);
+export const HappyThoughtItem = ({ thoughts }) => {
+  // const [thoughts, setThoughts] = useState([]);
+  
+  // const thoughtAPI = "https://happy-thoughts-api-4ful.onrender.com/thoughts";
+  // const fetchThoughts = () => {
+  //     fetch(thoughtAPI)
+  //     .then((res) => {
+  //       return res.json();
+  //     })
+  //     .then(data => {
+  //       setThoughts(data)
+  //       console.log(thoughts)
+  //     })
+  // }
 
-  useEffect(() => {
-    fetch(thoughtAPI)
-    .then((res) => {
-      return res.json();
-    })
-    .then(data => {
-      setThoughts(data)
-      console.log(thoughts)
-    })
-  }, [])
+  // useEffect(() => {
+  //   fetchThoughts();  
+  // }, [])
 
   const getTimeAgo = (timestamp) => {
     const now = new Date();

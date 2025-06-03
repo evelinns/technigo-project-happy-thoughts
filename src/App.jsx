@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { HappyThoughtInput } from "./components/happyThoughtInput"
-import { HappyThoughtItem } from "./components/HappyThoughtItem"
+import { HappyThoughtInput } from "./components/HappyThoughtInput";
+import { HappyThoughtItem } from "./components/HappyThoughtItem";
 
 export const thoughtsApi = "https://happy-thoughts-api-4ful.onrender.com/thoughts"
 

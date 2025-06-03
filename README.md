@@ -1,15 +1,16 @@
 # Happy Thoughts
 
-Replace this readme with your own information about the project. You can include things like:
+Project to fetch and send data to an API.
 
-- Brief description of the assignment
-- How you approached the task, what tools and techniques you used, and how you planned it
-- If you had more time, what would be next?
-- How to run the project locally
+- Fetch existing happy thoughts from the API and show on the page
+- Input form to allow user to submit a happy thought, on submit the list of happy thoughts are updated to show the latest one too
+- Thoughts displayed in order of recently submitted
+- User is able to like a thought, it will show the like button as clicked and prevent user from liking the same thought multiple times
+- Time displayed is formatted to show when it was submitted, if just now, x minutes ago, x hours ago or x days ago
 
 ## View it live
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
 
+Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
 
 ## Getting Started with the Project
 

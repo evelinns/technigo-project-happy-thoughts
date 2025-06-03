@@ -10,7 +10,7 @@ Project to fetch and send data to an API.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Can be viewed live here: https://technigo-happythoughts.netlify.app/
 
 ## Getting Started with the Project
 
